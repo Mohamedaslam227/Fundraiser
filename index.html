@@ -1,0 +1,941 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Help build safe restroom facilities for 40 adolescent girls at Government Middle School, Vadakkampatti, Madurai. Goal: ₹1,25,000.">
+    <title>Build a Block, Build a Future | Vadakkampatti Girls' Restroom Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============================================================
+     SVG ICON SPRITE — referenced via <svg><use href="#ic-..."/></svg>
+     ============================================================ -->
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+  <defs>
+    <symbol id="ic-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/>
+      <circle cx="12" cy="9" r="2.5" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="ic-brick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="6" width="20" height="5" rx="1"/>
+      <rect x="2" y="13" width="20" height="5" rx="1"/>
+      <line x1="9" y1="6" x2="9" y2="11"/><line x1="15" y1="6" x2="15" y2="11"/>
+      <line x1="6" y1="13" x2="6" y2="18"/><line x1="12" y1="13" x2="12" y2="18"/><line x1="18" y1="13" x2="18" y2="18"/>
+    </symbol>
+    <symbol id="ic-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+      <circle cx="9" cy="7" r="4"/>
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+    </symbol>
+    <symbol id="ic-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="9" width="18" height="13" rx="1"/>
+      <path d="M12 2L3 9M21 9l-9-7"/>
+      <path d="M9 22V13h6v9"/>
+    </symbol>
+    <symbol id="ic-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/>
+      <circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="ic-arrow-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"/>
+    </symbol>
+    <symbol id="ic-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+      <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+    </symbol>
+    <symbol id="ic-trend-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/>
+      <polyline points="17 18 23 18 23 12"/>
+    </symbol>
+    <symbol id="ic-graduate" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+      <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+    </symbol>
+    <symbol id="ic-droplet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+    </symbol>
+    <symbol id="ic-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="11" width="18" height="11" rx="2"/>
+      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+    </symbol>
+    <symbol id="ic-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+    </symbol>
+    <symbol id="ic-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+    </symbol>
+    <symbol id="ic-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="1" y="4" width="22" height="16" rx="2"/>
+      <line x1="1" y1="10" x2="23" y2="10"/>
+    </symbol>
+    <symbol id="ic-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="5" y="2" width="14" height="20" rx="2"/>
+      <line x1="12" y1="18" x2="12.01" y2="18"/>
+    </symbol>
+    <symbol id="ic-bank" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="3" y1="22" x2="21" y2="22"/>
+      <line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/>
+      <line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/>
+      <polygon points="12 2 20 7 4 7"/>
+    </symbol>
+    <symbol id="ic-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+      <polyline points="22,6 12,13 2,6"/>
+    </symbol>
+    <symbol id="ic-phone-call" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </symbol>
+    <symbol id="ic-message" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </symbol>
+    <symbol id="ic-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <line x1="2" y1="12" x2="22" y2="12"/>
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+    </symbol>
+    <symbol id="ic-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="4" width="18" height="18" rx="2"/>
+      <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
+      <line x1="3" y1="10" x2="21" y2="10"/>
+    </symbol>
+    <symbol id="ic-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="1" y="3" width="15" height="13"/>
+      <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+      <circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+    </symbol>
+    <symbol id="ic-hardhat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2z"/>
+      <path d="M10 10V5a2 2 0 0 1 4 0v5"/>
+      <path d="M4 15v-3a8 8 0 0 1 16 0v3"/>
+    </symbol>
+    <symbol id="ic-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
+    </symbol>
+    <symbol id="ic-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+      <circle cx="12" cy="13" r="4"/>
+    </symbol>
+    <symbol id="ic-heart" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+    </symbol>
+    <symbol id="ic-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="1 4 1 10 7 10"/>
+      <path d="M3.51 15a9 9 0 1 0 .49-3.51"/>
+    </symbol>
+    <symbol id="ic-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+      <rect x="8" y="2" width="8" height="4" rx="1"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <a href="#hero" class="nav-brand">
+            <span class="nb-icon" aria-hidden="true">
+                <svg class="icon" aria-hidden="true"><use href="#ic-brick"/></svg>
+            </span>
+            <span>Build a Block</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#problem">The Problem</a></li>
+            <li><a href="#photos">Gallery</a></li>
+            <li><a href="#tracker">Donate</a></li>
+            <li><a href="#budget">Budget</a></li>
+            <li><a href="#tracker" class="nav-btn">
+                <svg class="icon icon-xs" aria-hidden="true"><use href="#ic-heart"/></svg>
+                Build Now
+            </a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="hero" class="hero">
+    <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb-3" aria-hidden="true"></div>
+    <div class="container hero-inner">
+
+        <div class="hero-content">
+            <div class="hero-pill">
+                <svg class="icon icon-xs" aria-hidden="true"><use href="#ic-pin"/></svg>
+                Vadakkampatti Village · Madurai District · Tamil Nadu
+            </div>
+            <h1 class="hero-h1">
+                Build a Block,<br>
+                <span class="h1-em">Build a Future</span>
+            </h1>
+            <p class="hero-p">
+                Help us construct safe restroom facilities for 40 adolescent girls at
+                Government Middle School in Vadakkampatti — ensuring their education
+                never has to stop.
+            </p>
+            <div class="hero-btns">
+                <a href="#tracker" class="btn btn-primary">
+                    <svg class="icon icon-sm" aria-hidden="true"><use href="#ic-brick"/></svg>
+                    Build a Block Now
+                </a>
+                <a href="#problem" class="btn btn-outline-white">
+                    Learn More
+                    <svg class="icon icon-sm" aria-hidden="true"><use href="#ic-arrow-down"/></svg>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="hstat">
+                    <svg class="icon icon-sm hstat-icon" aria-hidden="true"><use href="#ic-users"/></svg>
+                    <span class="hstat-n">40</span>
+                    <span class="hstat-l">Girls Impacted</span>
+                </div>
+                <div class="hstat-div" aria-hidden="true"></div>
+                <div class="hstat">
+                    <svg class="icon icon-sm hstat-icon" aria-hidden="true"><use href="#ic-building"/></svg>
+                    <span class="hstat-n">5</span>
+                    <span class="hstat-l">Restrooms</span>
+                </div>
+                <div class="hstat-div" aria-hidden="true"></div>
+                <div class="hstat">
+                    <svg class="icon icon-sm hstat-icon" aria-hidden="true"><use href="#ic-target"/></svg>
+                    <span class="hstat-n">₹1.25L</span>
+                    <span class="hstat-l">Goal</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-img-wrap">
+            <!--
+                HERO IMAGE
+                File: hero-main.jpg  (place in the same folder as index.html)
+                Recommended size: 600×480px, landscape or portrait of the school / girls.
+            -->
+            <img src="Hero section image.png"
+                 alt="Students at Government Middle School, Vadakkampatti village"
+                 class="hero-img"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="hero-img-ph img-ph" style="display:none">
+                <svg class="icon icon-xl" aria-hidden="true"><use href="#ic-camera"/></svg>
+                <span>Upload: hero-main.jpg</span>
+            </div>
+            <div class="hero-tag">
+                <svg class="icon icon-xs" aria-hidden="true"><use href="#ic-target"/></svg>
+                Goal: ₹1,25,000
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ===== PROBLEM ===== -->
+<section id="problem" class="problem section-py">
+    <div class="container">
+        <span class="stag">The Challenge</span>
+        <h2 class="stitle">A Silent Crisis in Our Schools</h2>
+        <div class="problem-grid">
+            <div class="problem-text">
+                <p class="p-lead">
+                    In many rural government schools, adolescent girls face a silent
+                    struggle: the lack of safe and functional sanitation facilities.
+                </p>
+                <p class="p-body">
+                    At the Government Middle School in Vadakkampatti,
+                    <strong>40 young girls</strong> hesitate to attend school due to unsafe,
+                    incomplete restroom structures. This isn't just about infrastructure —
+                    it affects their dignity, health, and causes many to miss school during
+                    menstruation, increasing the risk of <strong>dropping out</strong>.
+                </p>
+            </div>
+            <div class="impact-cards">
+                <div class="impact-card">
+                    <div class="ic-icon ic-red">
+                        <svg class="icon" aria-hidden="true"><use href="#ic-alert"/></svg>
+                    </div>
+                    <div class="ic-text">
+                        <strong>No Safe Sanitation</strong>
+                        <p>Existing structures are incomplete, damaged, and unsafe for daily use</p>
+                    </div>
+                </div>
+                <div class="impact-card">
+                    <div class="ic-icon ic-amber">
+                        <svg class="icon" aria-hidden="true"><use href="#ic-trend-down"/></svg>
+                    </div>
+                    <div class="ic-text">
+                        <strong>Attendance Drops Sharply</strong>
+                        <p>Girls regularly miss school days, especially during menstruation</p>
+                    </div>
+                </div>
+                <div class="impact-card">
+                    <div class="ic-icon ic-blue">
+                        <svg class="icon" aria-hidden="true"><use href="#ic-graduate"/></svg>
+                    </div>
+                    <div class="ic-text">
+                        <strong>High Dropout Risk</strong>
+                        <p>Without safe facilities, girls are pushed toward leaving school permanently</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PHOTOS — Single Unified Gallery ===== -->
+<section id="photos" class="photos section-py">
+    <div class="container">
+        <span class="stag photos-stag">On the Ground</span>
+        <h2 class="stitle">Witness the Need,<br>Imagine the Change</h2>
+        <p class="ssub">
+            Real photographs from Government Middle School, Vadakkampatti — faces, facilities,
+            and the site waiting to be transformed.
+        </p>
+
+        <!--
+            PHOTO MOSAIC — 5 photo slots.
+            Replace each src with your actual files.
+            Place all files in the same folder as index.html.
+
+            photo-1.jpg  — Feature (wide):  school building / girls together   (800×550px)
+            photo-2.jpg  — Top right:       portrait / classroom scene          (400×275px)
+            photo-3.jpg  — Bottom left:     wide shot of damaged restroom       (600×360px)
+            photo-4.jpg  — Bottom center:   close-up of structural damage       (380×360px)
+            photo-5.jpg  — Bottom right:    proposed construction site          (380×360px)
+        -->
+        <div class="photo-mosaic">
+            <div class="pm-cell pm-feature">
+                <img src="2.jpeg"
+                     alt="Damaged and incomplete restroom structure at Government Middle School, Vadakkampatti"
+                     class="pm-img"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="pm-ph img-ph" style="display:none">
+                    <svg class="icon icon-xl" aria-hidden="true"><use href="#ic-camera"/></svg>
+                    <span>2.jpeg</span><small>Restroom — current damaged state</small>
+                </div>
+                <div class="pm-caption">
+                    <strong>Current Restroom Condition</strong>
+                    <span>Damaged, incomplete — unusable for 40 girls</span>
+                </div>
+            </div>
+
+            <div class="pm-cell pm-tr">
+                <img src="3.jpeg"
+                     alt="Broken walls and unsafe conditions at the existing restroom facility, Vadakkampatti school"
+                     class="pm-img"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="pm-ph img-ph" style="display:none">
+                    <svg class="icon icon-xl" aria-hidden="true"><use href="#ic-camera"/></svg>
+                    <span>3.jpeg</span><small>Crumbling structure — detail</small>
+                </div>
+                <div class="pm-caption">
+                    <strong>Crumbling Structure</strong>
+                    <span>Walls broken, unsafe to use daily</span>
+                </div>
+            </div>
+
+            <div class="pm-cell pm-bl">
+                <img src="5.jpeg"
+                     alt="Wide view of the completely deteriorated restroom block at Vadakkampatti Village school"
+                     class="pm-img"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="pm-ph img-ph" style="display:none">
+                    <svg class="icon icon-xl" aria-hidden="true"><use href="#ic-camera"/></svg>
+                    <span>5.jpeg</span><small>Full extent of damage</small>
+                </div>
+                <div class="pm-caption">
+                    <strong>Full Extent of Damage</strong>
+                    <span>The entire facility needs reconstruction</span>
+                </div>
+            </div>
+
+            <div class="pm-cell pm-bm">
+                <img src="9.jpeg"
+                     alt="Structural failure detail — no plumbing, no privacy, no safety for girls at Vadakkampatti school"
+                     class="pm-img"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="pm-ph img-ph" style="display:none">
+                    <svg class="icon icon-xl" aria-hidden="true"><use href="#ic-camera"/></svg>
+                    <span>9.jpeg</span><small>Structural failure detail</small>
+                </div>
+                <div class="pm-caption">
+                    <strong>No Plumbing. No Privacy.</strong>
+                    <span>Immediate reconstruction is the only solution</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SOLUTION ===== -->
+<section id="solution" class="solution section-py">
+    <div class="container tc">
+        <span class="stag sol-stag">The Solution</span>
+        <h2 class="stitle">5 Restrooms.<br>40 Futures. One Goal.</h2>
+        <p class="ssub centered">
+            Every donation builds a fully functional, safe unit — quality brickwork, plumbing,
+            waterproofing, and lockable doors.
+        </p>
+        <div class="sol-grid">
+            <div class="sol-card">
+                <div class="sol-icon">
+                    <svg class="icon icon-lg" aria-hidden="true"><use href="#ic-brick"/></svg>
+                </div>
+                <h3>Safe Construction</h3>
+                <p>5 solid masonry units with quality brickwork, cement plaster, and durable roofing sheets</p>
+            </div>
+            <div class="sol-card">
+                <div class="sol-icon">
+                    <svg class="icon icon-lg" aria-hidden="true"><use href="#ic-droplet"/></svg>
+                </div>
+                <h3>Running Water</h3>
+                <p>Complete plumbing infrastructure — piped supply and proper sanitary drainage in every unit</p>
+            </div>
+            <div class="sol-card">
+                <div class="sol-icon">
+                    <svg class="icon icon-lg" aria-hidden="true"><use href="#ic-lock"/></svg>
+                </div>
+                <h3>Privacy &amp; Dignity</h3>
+                <p>Secure lockable doors and full-height walls ensuring complete privacy and safety for every girl</p>
+            </div>
+            <div class="sol-card">
+                <div class="sol-icon">
+                    <svg class="icon icon-lg" aria-hidden="true"><use href="#ic-book"/></svg>
+                </div>
+                <h3>Uninterrupted Education</h3>
+                <p>Enabling 40 girls to attend school every single day with dignity and without hesitation</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== HER STORY ===== -->
+<section id="story" class="story section-py">
+    <div class="container">
+        <div class="story-inner">
+            <div class="story-quote-wrap">
+                <span class="story-stag">
+                    <svg class="icon icon-xs" aria-hidden="true"><use href="#ic-heart"/></svg>
+                    The Story That Started It All
+                </span>
+                <blockquote class="story-quote">
+                    <span class="sq-mark" aria-hidden="true">"</span>
+                    <p>
+                        She was not afraid of exams. She was not bored of learning.
+                        She simply <strong>stopped coming to school</strong> on certain days —
+                        not because she wanted to, but because there was no safe place for her
+                        to be a girl.
+                    </p>
+                    <p class="sq-sub">
+                        A young girl at Government Middle School shared this during a field visit.
+                        Her hesitation was not about studies — it was about <strong>dignity</strong>.
+                    </p>
+                    <footer class="sq-source">
+                        — Recorded by Jayalakshmi, MSW, during academic field interaction
+                    </footer>
+                </blockquote>
+            </div>
+            <div class="story-stat-col">
+                <div class="story-stat-card">
+                    <div class="ssc-icon">
+                        <svg class="icon icon-lg" aria-hidden="true"><use href="#ic-users"/></svg>
+                    </div>
+                    <div class="ssc-num">40</div>
+                    <div class="ssc-label">Girls at this school face this daily</div>
+                </div>
+                <div class="story-stat-card ssc-accent">
+                    <div class="ssc-icon">
+                        <svg class="icon icon-lg" aria-hidden="true"><use href="#ic-trend-down"/></svg>
+                    </div>
+                    <div class="ssc-num">32%</div>
+                    <div class="ssc-label">Drop in girls' attendance by age&nbsp;16</div>
+                </div>
+                <div class="story-stat-card ssc-green">
+                    <div class="ssc-icon">
+                        <svg class="icon icon-lg" aria-hidden="true"><use href="#ic-building"/></svg>
+                    </div>
+                    <div class="ssc-num">₹5K</div>
+                    <div class="ssc-label">Is all it takes to change one girl's story</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== DROPOUT CRISIS STATS ===== -->
+<section id="dropout" class="dropout section-py">
+    <div class="container">
+        <span class="stag dropout-stag">The Numbers Don't Lie</span>
+        <h2 class="stitle tc">Every Year, More Girls<br>Disappear from Classrooms</h2>
+        <p class="ssub centered">
+            National enrollment data reveals a sharp decline as girls enter adolescence —
+            the exact age when safe sanitation becomes critical.
+        </p>
+
+        <div class="dropout-funnel">
+            <div class="df-step" data-age="6–10" data-pct="85">
+                <div class="df-bar-wrap">
+                    <div class="df-bar df-bar-1" data-w="85">
+                        <span class="df-bar-lbl">85% enrolled</span>
+                    </div>
+                </div>
+                <div class="df-info">
+                    <span class="df-age">Ages 6–10</span>
+                    <span class="df-note">Primary years — most girls in school</span>
+                </div>
+            </div>
+            <div class="df-drop-arrow" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                <span>–20% drop</span>
+            </div>
+            <div class="df-step" data-age="11–13" data-pct="65">
+                <div class="df-bar-wrap">
+                    <div class="df-bar df-bar-2" data-w="65">
+                        <span class="df-bar-lbl">65% enrolled</span>
+                    </div>
+                </div>
+                <div class="df-info">
+                    <span class="df-age">Ages 11–13</span>
+                    <span class="df-note">Adolescence begins — no safe restroom here</span>
+                </div>
+            </div>
+            <div class="df-drop-arrow df-drop-red" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                <span>–12% more drop</span>
+            </div>
+            <div class="df-step" data-age="16–17" data-pct="53">
+                <div class="df-bar-wrap">
+                    <div class="df-bar df-bar-3" data-w="53">
+                        <span class="df-bar-lbl">53% enrolled</span>
+                    </div>
+                </div>
+                <div class="df-info">
+                    <span class="df-age">Ages 16–17</span>
+                    <span class="df-note">Nearly half of all girls have left school</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="dropout-cta-strip">
+            <div class="dcs-text">
+                <svg class="icon icon-sm" aria-hidden="true"><use href="#ic-info"/></svg>
+                A safe restroom is one of the most proven interventions to keep adolescent girls in school.
+                <strong>Your donation today breaks this cycle.</strong>
+            </div>
+            <a href="#tracker" class="btn btn-primary dcs-btn">
+                <svg class="icon icon-sm" aria-hidden="true"><use href="#ic-heart"/></svg>
+                Break the Cycle
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== WHAT YOUR DONATION ACHIEVES ===== -->
+<section id="outcomes" class="outcomes section-py">
+    <div class="container">
+        <span class="stag outcomes-stag">Your Impact</span>
+        <h2 class="stitle tc">One Donation.<br>Ten Life-Changing Outcomes.</h2>
+        <p class="ssub centered">Every rupee raised goes toward these real, measurable changes in the lives of 40 girls.</p>
+
+        <div class="outcomes-grid">
+            <div class="outcome-card">
+                <div class="oc-num">01</div>
+                <div class="oc-icon"><svg class="icon" aria-hidden="true"><use href="#ic-shield"/></svg></div>
+                <div class="oc-text">Reduced risk of sexual harassment with a safe, enclosed sanitation space</div>
+            </div>
+            <div class="outcome-card">
+                <div class="oc-num">02</div>
+                <div class="oc-icon"><svg class="icon" aria-hidden="true"><use href="#ic-droplet"/></svg></div>
+                <div class="oc-text">Fewer hygiene-related infections — especially urinary tract issues</div>
+            </div>
+            <div class="outcome-card">
+                <div class="oc-num">03</div>
+                <div class="oc-icon"><svg class="icon" aria-hidden="true"><use href="#ic-graduate"/></svg></div>
+                <div class="oc-text">Lower school dropout rate among adolescent girls in the village</div>
+            </div>
+            <div class="outcome-card">
+                <div class="oc-num">04</div>
+                <div class="oc-icon"><svg class="icon" aria-hidden="true"><use href="#ic-heart"/></svg></div>
+                <div class="oc-text">Improved confidence and comfort in the school environment every day</div>
+            </div>
+            <div class="outcome-card">
+                <div class="oc-num">05</div>
+                <div class="oc-icon"><svg class="icon" aria-hidden="true"><use href="#ic-book"/></svg></div>
+                <div class="oc-text">Better hydration and nutrition practices — girls will drink water freely</div>
+            </div>
+            <div class="outcome-card">
+                <div class="oc-num">06</div>
+                <div class="oc-icon"><svg class="icon" aria-hidden="true"><use href="#ic-users"/></svg></div>
+                <div class="oc-text">Increased parental trust in school safety — more families will send girls</div>
+            </div>
+            <div class="outcome-card">
+                <div class="oc-num">07</div>
+                <div class="oc-icon"><svg class="icon" aria-hidden="true"><use href="#ic-building"/></svg></div>
+                <div class="oc-text">Possible rise in overall student enrolment as word spreads</div>
+            </div>
+            <div class="outcome-card">
+                <div class="oc-num">08</div>
+                <div class="oc-icon"><svg class="icon" aria-hidden="true"><use href="#ic-target"/></svg></div>
+                <div class="oc-text">Enhanced dignity and self-worth — girls will know their school cares</div>
+            </div>
+            <div class="outcome-card">
+                <div class="oc-num">09</div>
+                <div class="oc-icon"><svg class="icon" aria-hidden="true"><use href="#ic-clipboard"/></svg></div>
+                <div class="oc-text">Greater awareness of proper sanitation and menstrual health practices</div>
+            </div>
+            <div class="outcome-card">
+                <div class="oc-num">10</div>
+                <div class="oc-icon"><svg class="icon" aria-hidden="true"><use href="#ic-lock"/></svg></div>
+                <div class="oc-text">Protection from unsafe open spaces — no girl will have to go outdoors</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== GAMIFIED TRACKER ===== -->
+<section id="tracker" class="tracker section-py">
+    <div class="container">
+        <span class="stag tracker-stag">Interactive Tracker</span>
+        <h2 class="stitle tc">Your Donation<br>Transforms This School</h2>
+        <p class="ssub centered">
+            Enter an amount and watch the real transformation — live.
+            As you donate, the broken <em>before</em> image reveals the beautiful <em>after</em>. Total Goal: <strong>₹1,25,000</strong>.
+        </p>
+
+        <div class="tracker-grid">
+
+            <!-- LEFT: Building Visualizer -->
+            <div class="building-panel">
+                <div class="bp-header">
+                    <span class="pct-big" id="progressPercent" aria-live="polite">0%</span>
+                    <span class="pct-label">of ₹1,25,000 goal</span>
+                </div>
+
+                <div class="building-scene" aria-label="Donation transformation visualizer">
+                    <!-- BEFORE: current broken structure — always visible as the base -->
+                    <img src="7.jpeg"
+                         alt="Before: current damaged restroom structure at Vadakkampatti school"
+                         class="bi-before"
+                         onerror="this.style.opacity='.15'"
+                         loading="lazy">
+                    <!-- AFTER: new completed block — reveals bottom-to-top as donations come in -->
+                    <img src="8.png"
+                         alt="After: the new restroom block your donation will build"
+                         class="bi-after" id="buildingAfterImg"
+                         onerror="this.style.opacity='.15'"
+                         loading="lazy">
+                    <!-- Reveal divider — moves upward as donation % increases -->
+                    <div class="bi-divider" id="biDivider">
+                        <span class="bi-div-pct" id="biDivPct">0%</span>
+                    </div>
+                    <!-- Corner labels -->
+                    <div class="bi-lbl bi-lbl-before">BEFORE</div>
+                    <div class="bi-lbl bi-lbl-after" id="biAfterLbl">AFTER</div>
+                </div>
+
+                <!-- Progress bar -->
+                <div class="prog-area">
+                    <div class="prog-rail"
+                         role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+                         aria-label="Donation progress towards ₹1,25,000">
+                        <div class="prog-fill" id="progressFill">
+                            <span class="fill-glow" aria-hidden="true"></span>
+                        </div>
+                        <div class="prog-mark" style="left:25%"><span>25%</span></div>
+                        <div class="prog-mark" style="left:50%"><span>50%</span></div>
+                        <div class="prog-mark" style="left:75%"><span>75%</span></div>
+                    </div>
+                    <div class="prog-labels">
+                        <span>₹0</span>
+                        <span class="prog-raised" id="amountRaised" aria-live="polite">₹0 raised</span>
+                        <span>₹1,25,000</span>
+                    </div>
+                </div>
+
+                <!-- Milestones -->
+                <div class="ms-row" aria-label="Construction milestones">
+                    <div class="ms" id="ms25"><span class="ms-e" aria-hidden="true">🏗️</span><span class="ms-n">Foundation</span><span class="ms-p">25%</span></div>
+                    <div class="ms" id="ms50"><span class="ms-e" aria-hidden="true">🧱</span><span class="ms-n">Walls Up</span><span class="ms-p">50%</span></div>
+                    <div class="ms" id="ms75"><span class="ms-e" aria-hidden="true">🏠</span><span class="ms-n">Roofed!</span><span class="ms-p">75%</span></div>
+                    <div class="ms" id="ms100"><span class="ms-e" aria-hidden="true">🎉</span><span class="ms-n">Complete!</span><span class="ms-p">100%</span></div>
+                </div>
+            </div>
+
+            <!-- RIGHT: Controls -->
+            <div class="donate-col">
+
+                <!-- Sim card -->
+                <div class="sim-card">
+                    <div class="sc-head">
+                        <span class="sc-head-icon">
+                            <svg class="icon" aria-hidden="true"><use href="#ic-brick"/></svg>
+                        </span>
+                        <h3>Simulate a Donation</h3>
+                    </div>
+                    <p class="sc-desc">Choose an amount to watch bricks appear live — then make it real!</p>
+
+                    <div class="quick-grid" role="group" aria-label="Quick select amounts">
+                        <button class="qbtn" data-amount="1000" type="button">₹1,000</button>
+                        <button class="qbtn" data-amount="5000" type="button">₹5,000</button>
+                        <button class="qbtn" data-amount="10000" type="button">₹10,000</button>
+                        <button class="qbtn" data-amount="25000" type="button">₹25,000</button>
+                        <button class="qbtn" data-amount="50000" type="button">₹50,000</button>
+                        <button class="qbtn" data-amount="125000" type="button">₹1,25,000</button>
+                    </div>
+
+                    <div class="input-row">
+                        <label for="donationInput" class="sr-only">Donation amount in Indian Rupees</label>
+                        <span class="input-symbol" aria-hidden="true">₹</span>
+                        <input type="number" id="donationInput"
+                               placeholder="Enter custom amount"
+                               min="1" max="125000"
+                               class="donation-input"
+                               aria-describedby="brick-hint">
+                    </div>
+                    <p class="input-hint" id="brick-hint">
+                        <svg class="icon icon-xs" aria-hidden="true"><use href="#ic-info"/></svg>
+                        Every ₹5,000 places one brick &nbsp;·&nbsp; ₹25,000 fills an entire row
+                    </p>
+
+                    <div class="sim-actions">
+                        <button class="btn btn-simulate" id="simulateBtn" type="button">
+                            <svg class="icon icon-sm" aria-hidden="true"><use href="#ic-brick"/></svg>
+                            Simulate Donation
+                        </button>
+                        <button class="btn btn-reset" id="resetBtn" type="button">
+                            <svg class="icon icon-sm" aria-hidden="true"><use href="#ic-refresh"/></svg>
+                            Reset
+                        </button>
+                    </div>
+
+                    <div class="feedback" id="feedbackBox" role="status" aria-live="polite">
+                        <span id="feedbackText">Enter an amount above to watch the building come alive.</span>
+                    </div>
+                </div>
+
+                <!-- Real donate card -->
+                <div class="rd-card">
+                    <div class="rd-top">
+                        <div class="rd-icon">
+                            <svg class="icon icon-md" aria-hidden="true"><use href="#ic-heart"/></svg>
+                        </div>
+                        <div>
+                            <strong>Ready to Make it Real?</strong>
+                            <p>Your donation directly funds bricks, plumbing, and roofing for 40 girls.</p>
+                        </div>
+                    </div>
+                    <!--
+                        PAYMENT LINK — replace '#' with your actual payment link.
+                        Razorpay example: href="https://rzp.io/l/your-link-id"
+                        UPI deep-link:   href="upi://pay?pa=yourname@upi&pn=Jayalakshmi&cu=INR"
+                    -->
+                    <a href="#" class="btn btn-donate"
+                       id="donateRealBtn" target="_blank" rel="noopener noreferrer"
+                       aria-label="Donate securely via UPI or Card">
+                        <svg class="icon icon-sm" aria-hidden="true"><use href="#ic-card"/></svg>
+                        Donate via UPI / Card
+                    </a>
+                    <div class="trust-row">
+                        <span class="trust-chip"><svg class="icon icon-xs" aria-hidden="true"><use href="#ic-shield"/></svg>Secured</span>
+                        <span class="trust-chip"><svg class="icon icon-xs" aria-hidden="true"><use href="#ic-phone"/></svg>UPI</span>
+                        <span class="trust-chip"><svg class="icon icon-xs" aria-hidden="true"><use href="#ic-card"/></svg>All Cards</span>
+                        <span class="trust-chip"><svg class="icon icon-xs" aria-hidden="true"><use href="#ic-bank"/></svg>Net Banking</span>
+                    </div>
+                </div>
+
+                <!-- Transparency -->
+                <div class="transparency-card">
+                    <div class="tp-icon">
+                        <svg class="icon icon-md" aria-hidden="true"><use href="#ic-clipboard"/></svg>
+                    </div>
+                    <div>
+                        <strong>100% Transparency Pledge</strong>
+                        <p>Every rupee is tracked. Construction photos and receipts shared with all donors on completion.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== BUDGET ===== -->
+<section id="budget" class="budget section-py">
+    <div class="container tc">
+        <span class="stag">Financial Plan</span>
+        <h2 class="stitle">Where Every Rupee Goes</h2>
+        <p class="ssub centered">Complete transparency across 5 restroom units — every cost visible.</p>
+
+        <div class="budget-grid">
+            <div class="budget-table-wrap">
+                <table class="budget-table" role="table" aria-label="Project budget breakdown for ₹1,25,000">
+                    <thead>
+                        <tr>
+                            <th scope="col">Category</th>
+                            <th scope="col">Items Covered</th>
+                            <th scope="col">Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-cat">
+                                <span class="td-ico"><svg class="icon icon-sm" aria-hidden="true"><use href="#ic-brick"/></svg></span>
+                                Materials
+                            </td>
+                            <td>Cement, Bricks, Sand, Roofing Sheets, Plumbing Pipes &amp; Fittings, Doors, Window Grills, Tiles &amp; Hardware</td>
+                            <td class="td-amt">₹88,000</td>
+                        </tr>
+                        <tr>
+                            <td class="td-cat">
+                                <span class="td-ico"><svg class="icon icon-sm" aria-hidden="true"><use href="#ic-hardhat"/></svg></span>
+                                Labor
+                            </td>
+                            <td>
+                                Skilled masons &amp; construction workers
+                                <span class="td-strike">₹40,000</span>
+                                <span class="vol-pill">₹25,000 with volunteers</span>
+                            </td>
+                            <td class="td-amt">
+                                ₹25,000
+                                <small class="save-note">Saving ₹15,000 via community volunteers!</small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-cat">
+                                <span class="td-ico"><svg class="icon icon-sm" aria-hidden="true"><use href="#ic-truck"/></svg></span>
+                                Miscellaneous
+                            </td>
+                            <td>Material transport, site preparation, safety equipment, waste disposal &amp; contingency</td>
+                            <td class="td-amt">₹12,000</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td colspan="2" class="td-cat">
+                                <span class="td-ico"><svg class="icon icon-sm" aria-hidden="true"><use href="#ic-target"/></svg></span>
+                                <strong>Total Fundraising Goal</strong>
+                                <small class="total-note">(5 fully functional restroom units)</small>
+                            </td>
+                            <td class="td-amt total-amt"><strong>₹1,25,000</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="budget-note">
+                    <svg class="icon icon-sm" aria-hidden="true"><use href="#ic-info"/></svg>
+                    <p>All receipts and expenditure records are available for donor inspection upon request.</p>
+                </div>
+            </div>
+
+            <!-- Visual chart -->
+            <div class="cost-chart">
+                <div class="cc-inner">
+                    <h3>Cost Split</h3>
+                    <div class="cc-bars">
+                        <div class="cc-row">
+                            <span class="cc-lbl">Materials</span>
+                            <div class="cc-track"><div class="cc-bar cc-mat" data-w="70" style="width:0"></div></div>
+                            <span class="cc-meta">₹88,000 · 70%</span>
+                        </div>
+                        <div class="cc-row">
+                            <span class="cc-lbl">Labor</span>
+                            <div class="cc-track"><div class="cc-bar cc-lab" data-w="20" style="width:0"></div></div>
+                            <span class="cc-meta">₹25,000 · 20%</span>
+                        </div>
+                        <div class="cc-row">
+                            <span class="cc-lbl">Misc</span>
+                            <div class="cc-track"><div class="cc-bar cc-misc" data-w="10" style="width:0"></div></div>
+                            <span class="cc-meta">₹12,000 · 10%</span>
+                        </div>
+                    </div>
+                    <div class="cc-total">
+                        <span>Total Goal</span>
+                        <strong>₹1,25,000</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final-cta">
+    <div class="container fc-inner">
+        <h2>Every Brick You Add<br>Changes a Girl's Future</h2>
+        <p>40 girls. 5 restrooms. One community. One decision — <strong>Yours.</strong></p>
+        <!--
+            PAYMENT LINK — replace '#' with your Razorpay / UPI link (same as above)
+        -->
+        <a href="#" class="btn btn-cta" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-sm" aria-hidden="true"><use href="#ic-card"/></svg>
+            Donate Now — Build Their Future
+        </a>
+        <p class="fc-trust">
+            <svg class="icon icon-xs" aria-hidden="true"><use href="#ic-shield"/></svg>
+            100% Secure &nbsp;·&nbsp; UPI &nbsp;·&nbsp; Net Banking &nbsp;·&nbsp; All Credit &amp; Debit Cards
+        </p>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand-col">
+                <div class="f-logo">
+                    <svg class="icon" aria-hidden="true"><use href="#ic-brick"/></svg>
+                    Build a Block, Build a Future
+                </div>
+                <p class="f-about">
+                    A grassroots community initiative to restore dignity and enable
+                    uninterrupted education for adolescent girls in Vadakkampatti,
+                    Madurai District.
+                </p>
+                <p class="f-credit">
+                    <em>With Hope and Responsibility</em><br>
+                    <strong>— Initiated by Jayalakshmi, MSW Student</strong>
+                </p>
+            </div>
+            <div class="footer-info-col">
+                <h4>Project Details</h4>
+                <ul class="f-list">
+                    <li><svg class="icon icon-sm" aria-hidden="true"><use href="#ic-pin"/></svg>Govt. Middle School, Vadakkampatti</li>
+                    <li><svg class="icon icon-sm" aria-hidden="true"><use href="#ic-pin"/></svg>Madurai District, Tamil Nadu</li>
+                    <li><svg class="icon icon-sm" aria-hidden="true"><use href="#ic-target"/></svg>Goal: ₹1,25,000</li>
+                    <li><svg class="icon icon-sm" aria-hidden="true"><use href="#ic-building"/></svg>5 Restrooms for 40 Girls</li>
+                    <li><svg class="icon icon-sm" aria-hidden="true"><use href="#ic-calendar"/></svg>Campaign Year: 2025–2026</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Build a Block, Build a Future Initiative. All funds used exclusively for construction.</p>
+            <p class="f-legal">This is a grassroots fundraising effort. All financial receipts are available for inspection upon donor request.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ===== CELEBRATION OVERLAY ===== -->
+<div class="celeb-overlay" id="celebrationOverlay" role="dialog" aria-modal="true" aria-labelledby="celebTitle" hidden>
+    <div class="confetti-wrap" id="confettiContainer" aria-hidden="true"></div>
+    <div class="celeb-box">
+        <div class="celeb-emoji" aria-hidden="true">🎉</div>
+        <h2 id="celebTitle">Simulation Complete!</h2>
+        <p>Your simulation has <strong>fully funded</strong> the restroom block!<br>Now make it real — one donation changes 40 lives.</p>
+        <!--
+            PAYMENT LINK — replace '#' with your actual link
+        -->
+        <a href="#" class="btn btn-donate" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-sm" aria-hidden="true"><use href="#ic-card"/></svg>
+            Make a Real Donation Now
+        </a>
+        <button class="btn btn-celeb-close" id="closeCelebBtn" type="button">Continue Exploring</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
