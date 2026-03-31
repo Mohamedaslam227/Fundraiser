@@ -1081,6 +1081,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 @media (max-width: 1024px) {
     :root { --py: 76px; }
 
+    .container { padding: 0 22px; }
+
+    .navbar { padding: 0 16px; }
+    .nav-links { gap: 18px; }
+    .nav-links a { font-size: .82rem; }
+    .nav-btn { padding: 8px 14px; }
+
     .sol-grid { grid-template-columns: repeat(2, 1fr); }
     .budget-grid { grid-template-columns: 1fr; }
     .cost-chart { position: static; }
@@ -1101,6 +1108,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 @media (max-width: 768px) {
     :root { --py: 60px; }
 
+    .container { padding: 0 16px; }
+
     .hamburger { display: flex; }
 
     .nav-links {
@@ -1119,6 +1128,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     .hero { padding: 90px 0 52px; }
     .hero-inner { grid-template-columns: 1fr; gap: 44px; text-align: center; }
     .hero-btns { justify-content: center; }
+    .hero-btns .btn { min-width: 220px; }
     .hero-stats { margin: 0 auto; }
     .hero-p { margin-left: auto; margin-right: auto; }
     .hero-img-wrap { max-width: 440px; margin: 0 auto; }
@@ -1161,23 +1171,35 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     .footer-grid { grid-template-columns: 1fr; gap: 36px; }
 
     .ms-row { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+
+    .budget-table th,
+    .budget-table td { padding: 13px 14px; }
 }
 
 /* ≤ 480px */
 @media (max-width: 480px) {
     :root { --py: 48px; }
 
+    .container { padding: 0 14px; }
+
+    .btn { white-space: normal; }
+    .btn-cta { padding: 16px 24px; text-align: center; }
+
     .hero-stats { flex-direction: column; gap: 16px; padding: 20px 18px; }
     .hstat-div { width: 60%; height: 1px; }
 
     .hero-h1 { font-size: 2rem; }
 
+    .hero-btns { flex-direction: column; align-items: stretch; }
+    .hero-btns .btn { width: 100%; min-width: 0; }
+
     .photo-mosaic { grid-template-columns: 1fr; grid-template-rows: auto; }
     .pm-feature, .pm-tr, .pm-bl, .pm-bm { grid-column: auto; grid-row: auto; height: 200px; }
 
-    .outcomes-grid { grid-template-columns: 1fr 1fr; }
+    .outcomes-grid { grid-template-columns: 1fr; }
     .story-stat-col { flex-direction: row; flex-wrap: wrap; width: 100%; }
     .story-stat-card { flex: 1; min-width: 140px; }
+    .quick-grid { grid-template-columns: 1fr 1fr; }
     .sim-actions { flex-direction: column; }
     .btn-simulate, .btn-reset { width: 100%; }
 
