@@ -67,7 +67,7 @@
 
 /* ── Reset ─────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
 body { font-family: var(--sans); color: var(--ink); background: var(--bg); line-height: 1.65; overflow-x: hidden; }
 img  { max-width: 100%; height: auto; display: block; }
 a    { text-decoration: none; color: inherit; }
@@ -821,7 +821,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .donation-input::placeholder { color: var(--ink-4); font-weight: 400; }
 .donation-input::-webkit-inner-spin-button,
 .donation-input::-webkit-outer-spin-button { -webkit-appearance: none; }
-.donation-input[type=number] { -moz-appearance: textfield; }
+.donation-input[type=number] { appearance: textfield; -moz-appearance: textfield; }
 
 .input-hint {
     display: flex; align-items: center; gap: 5px;
@@ -1110,10 +1110,21 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
     .container { padding: 0 16px; }
 
+    .nav-container { height: 64px; }
+    .nav-brand { font-size: .95rem; min-width: 0; }
+    .nav-brand span:last-child {
+        display: inline-block;
+        max-width: calc(100vw - 128px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .hamburger { flex-shrink: 0; z-index: 1001; }
+
     .hamburger { display: flex; }
 
     .nav-links {
-        position: fixed; top: 70px; left: 0; right: 0;
+        position: fixed; top: 64px; left: 0; right: 0;
         background: rgba(250,250,248,.98); backdrop-filter: blur(20px);
         flex-direction: column; gap: 0;
         padding: 16px 0; transform: translateY(-110%);
@@ -1125,7 +1136,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     .nav-links a { display: block; padding: 14px 24px; color: var(--ink-2) !important; font-size: 1rem; }
     .nav-btn { margin: 12px 24px; border-radius: var(--r-full) !important; display: flex !important; }
 
-    .hero { padding: 90px 0 52px; }
+    .hero { min-height: auto; padding: 96px 0 52px; }
     .hero-inner { grid-template-columns: 1fr; gap: 44px; text-align: center; }
     .hero-btns { justify-content: center; }
     .hero-btns .btn { min-width: 220px; }
@@ -1182,6 +1193,17 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
     .container { padding: 0 14px; }
 
+    .navbar { padding: 0 10px; }
+    .nav-container { height: 60px; }
+    .nb-icon { width: 30px; height: 30px; }
+    .nav-brand { gap: 8px; font-size: .9rem; }
+    .nav-brand span:last-child { max-width: calc(100vw - 106px); }
+    .nav-links { top: 60px; }
+
+    .hero { padding-top: 92px; }
+    .hero-pill { white-space: normal; justify-content: center; padding: 8px 12px; }
+    .hero-p { font-size: 1rem; line-height: 1.6; }
+
     .btn { white-space: normal; }
     .btn-cta { padding: 16px 24px; text-align: center; }
 
@@ -1208,5 +1230,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* ≤ 360px */
 @media (max-width: 360px) {
+    .container { padding: 0 12px; }
+    .nav-brand span:last-child { max-width: calc(100vw - 98px); }
+    .hero-pill { font-size: .68rem; }
     .hero-h1 { font-size: 1.75rem; }
 }
