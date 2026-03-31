@@ -259,15 +259,28 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .nav-btn:hover { background: var(--tc-d) !important; transform: translateY(-1px); }
 
-.hamburger { display: none; flex-direction: column; gap: 5px; padding: 6px; }
-.hamburger span {
-    display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: var(--t);
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+    border-radius: var(--r-sm);
+    transition: background .2s;
 }
-.navbar.scrolled .hamburger span { background: var(--ink); }
+.hamburger:hover { background: rgba(0,0,0,.06); }
+.hamburger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--ink);
+    border-radius: 2px;
+    transition: var(--t);
+}
+/* On hero (not scrolled), hamburger lines are white */
+.navbar:not(.scrolled) .hamburger span { background: rgba(255,255,255,.9); }
 .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
-.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
-
 /* ── HERO ─────────────────────────────────────────────────── */
 .hero {
     position: relative; min-height: 100vh;
@@ -1110,31 +1123,69 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
     .container { padding: 0 16px; }
 
-    .nav-container { height: 64px; }
-    .nav-brand { font-size: .95rem; min-width: 0; }
+    .nav-container { height: 60px; }
+    .nav-brand { font-size: .95rem; gap: 8px; }
     .nav-brand span:last-child {
-        display: inline-block;
-        max-width: calc(100vw - 128px);
+        max-width: calc(100vw - 120px);
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
     }
-    .hamburger { flex-shrink: 0; z-index: 1001; }
 
-    .hamburger { display: flex; }
+    .hamburger { display: flex; flex-shrink: 0; }
 
+    /* Mobile drawer — slides down from navbar */
     .nav-links {
-        position: fixed; top: 64px; left: 0; right: 0;
-        background: rgba(250,250,248,.98); backdrop-filter: blur(20px);
-        flex-direction: column; gap: 0;
-        padding: 16px 0; transform: translateY(-110%);
-        transition: transform .35s var(--ease);
-        box-shadow: var(--sh-md); z-index: 999; border-top: 1px solid var(--line);
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: rgba(250,250,248,.99);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        flex-direction: column;
+        gap: 0;
+        padding: 8px 0 20px;
+        transform: translateY(-115%);
+        transition: transform .35s cubic-bezier(.4,0,.2,1);
+        box-shadow: 0 8px 24px rgba(0,0,0,.12);
+        z-index: 999;
+        border-top: 1px solid var(--line);
     }
     .nav-links.open { transform: translateY(0); }
-    .nav-links li { width: 100%; text-align: center; }
-    .nav-links a { display: block; padding: 14px 24px; color: var(--ink-2) !important; font-size: 1rem; }
-    .nav-btn { margin: 12px 24px; border-radius: var(--r-full) !important; display: flex !important; }
+
+    .nav-links li { width: 100%; }
+
+    .nav-links a:not(.nav-btn) {
+        display: block;
+        padding: 14px 24px;
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--ink-2) !important;
+        border-left: 3px solid transparent;
+        transition: all .2s;
+    }
+    .nav-links a:not(.nav-btn):hover {
+        color: var(--tc) !important;
+        background: var(--tc-ghost);
+        border-left-color: var(--tc);
+    }
+
+    /* Divider before CTA button */
+    .nav-links li:last-child {
+        border-top: 1px solid var(--line);
+        margin-top: 8px;
+        padding-top: 8px;
+    }
+
+    .nav-btn {
+        margin: 0 20px !important;
+        border-radius: var(--r-full) !important;
+        display: flex !important;
+        justify-content: center;
+        padding: 12px 20px !important;
+        font-size: .95rem !important;
+    }
 
     .hero { min-height: auto; padding: 96px 0 52px; }
     .hero-inner { grid-template-columns: 1fr; gap: 44px; text-align: center; }
