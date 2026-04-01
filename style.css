@@ -868,7 +868,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .rd-top strong { display: block; font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
 .rd-top p { font-size: .85rem; color: var(--ink-3); line-height: 1.55; margin: 0; }
 
-.trust-row { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
+.trust-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 14px;
+    justify-content: center;
+    align-items: center;
+}
 .trust-chip {
     display: flex; align-items: center; gap: 5px;
     background: rgba(255,255,255,.75); border: 1px solid rgba(22,160,133,.25);
@@ -1008,9 +1015,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .final-cta p { font-size: 1.1rem; color: rgba(255,255,255,.72); margin-bottom: 40px; }
 .final-cta p strong { color: var(--coral); }
 .fc-trust {
-    display: flex; align-items: center; justify-content: center; gap: 6px;
+    display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 6px;
     margin-top: 20px !important; margin-bottom: 0 !important;
     font-size: .82rem !important; color: rgba(255,255,255,.45) !important;
+    text-align: center;
 }
 
 /* ── FOOTER ─────────────────────────────────────────────────── */
